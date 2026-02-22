@@ -216,6 +216,7 @@
             <a href="#prices">Цены</a>
             <a href="#booking">Бронирование</a>
             <a href="#skates">Коньки</a>
+            <a href="#reviews">Отзывы</a>
             @auth
                 @if(Auth::user()->is_admin)
                     <a href="{{ route('admin.dashboard') }}" class="admin-link">⚙️</a>
@@ -258,6 +259,7 @@
                     <li><a href="#prices">Цены</a></li>
                     <li><a href="#booking">Бронирование</a></li>
                     <li><a href="#skates">Коньки</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
                 </ul>
             </div>
         </div>

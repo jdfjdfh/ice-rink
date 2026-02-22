@@ -4,6 +4,27 @@
 
 @section('content')
     <style>
+        .hero {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            padding: var(--space-6) 0;
+            margin-bottom: var(--space-5);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: var(--space-3);
+        }
+
         /* Карточки */
         .cards-grid {
             display: grid;
@@ -172,9 +193,74 @@
             font-size: 12px;
             color: var(--text-light);
         }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-3);
+            margin: var(--space-4) 0;
+        }
+
+        .review-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-3);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-2);
+        }
+
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .review-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .review-date {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        .review-text {
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .rating {
+            color: #f1c40f;
+            margin-top: var(--space-1);
+        }
     </style>
 
     <div class="container">
+
+        <section class="hero">
+            <div class="container">
+                <h1>Ледовый каток в центре города</h1>
+                <p>Профессиональный лед, комфортные раздевалки, уютное кафе</p>
+                <button class="btn btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">
+                    Забронировать сейчас
+                </button>
+            </div>
+        </section>
+
         <!-- Цены -->
         <section id="prices">
             <div class="cards-grid">
@@ -305,6 +391,53 @@
                         Коньки временно отсутствуют
                     </p>
                 @endforelse
+            </div>
+        </section>
+
+        <section id="reviews">
+            <h2 class="section-title">Отзывы наших посетителей</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">АН</div>
+                        <div>
+                            <div class="review-name">Анна</div>
+                            <div class="review-date">2 дня назад</div>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        Отличный каток! Лед хороший, раздевалки чистые, есть фен. Коньки дают нормальные, не убитые. Цены адекватные.
+                    </div>
+                    <div class="rating">★★★★★</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">ДМ</div>
+                        <div>
+                            <div class="review-name">Дмитрий</div>
+                            <div class="review-date">5 дней назад</div>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        Хожу сюда постоянно. Удобное расположение, есть парковка. Персонал приветливый. Рекомендую!
+                    </div>
+                    <div class="rating">★★★★★</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">ЕК</div>
+                        <div>
+                            <div class="review-name">Екатерина</div>
+                            <div class="review-date">Неделю назад</div>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        Водим детей по выходным. Есть прокат для малышей, тренировки для начинающих. Очень довольны.
+                    </div>
+                    <div class="rating">★★★★☆</div>
+                </div>
             </div>
         </section>
     </div>
